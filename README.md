@@ -78,31 +78,31 @@ This should complete the installation.  Refer to the Build or Deploy instruction
 
 --debug --curl options will display more debug information to the command window.  These options are not required
 
-Download Commands
+##Download Commands
 
-Download Proxy 
+*Download Proxy*
 
 grunt --env=dev --proxyName={proxy-name} --targetFolder=./target/download --revision=17 --username={username} --password={password} downloadProxy --debug --curl
 
-Download Proxy and Proxy Config
+*Download Proxy and Proxy Config*
 
 grunt --env=dev --proxyName={proxy-name} --targetFolder=./target/download --revision=17 --username={username} --password={password} downloadProxyAndConfig --debug --curl
 
-Download API Products Config
+*Download API Products Config*
 
 grunt --env=dev --proxyName=apiproduct-config --targetFolder=./target/download --username={username} --password={password} downloadApiProductConfig --debug --curl
 
-Download Developer App Config
+*Download Developer App Config*
 
 grunt --env=dev --proxyName=company-config --targetFolder=./target/download --username={username} --password={password} downloadAppConfig --debug --curl
  
-Build Commands
+##Build Commands
 
-Build Proxy Artifact (includes proxy and proxy config)
+*Build Proxy Artifact (includes proxy and proxy config)*
 
 grunt --env=dev --folderPath=../proxies/{proxy-name} --targetPath=../ buildArtifact --debug --curl
 
-Build Config Artifact (just config)
+*Build Config Artifact (just config)*
 
 grunt --env=dev --folderPath=../configs/apiproduct-config --targetPath=../ buildConfigArtifact --debug --curl
 
@@ -110,29 +110,29 @@ grunt --env=dev --folderPath=../configs/company-config --targetPath=../ buildCon
 
 grunt --env=dev --folderPath=../configs/app-config --targetPath=../ buildConfigArtifact --debug --curl
 
-Build Config Artifact and get Production App Key
+*Build Config Artifact and get Production App Key*
 
 grunt --env=dev --folderPath=../configs/app-config --targetPath=../ --prodenv=prod --produsername={username} --prodpassword={password} buildConfigArtifactProdKey --debug --curl
 
-Deploy Commands
+##Deploy Commands
 
-Deploy Artifact (Just Proxy, No Config)
+*Deploy Artifact (Just Proxy, No Config)*
 
 grunt --env=dev --artifact=./target/proxyartifact --env=development --folderPath=../proxies/{proxy-name} {proxy-name}/{proxy-name}-artifact.zip --username={username} --password={password} deployArtifact --debug --curl
 
-Deploy Artifact and Config (Both Proxy and Config)
+*Deploy Artifact and Config (Both Proxy and Config)*
 
 grunt --env=dev --artifact=./target/{proxy-name}/{proxy-name}-artifact.zip --username={username} --password={password} deployConfigAndArtifact --debug --curl
 
-Deploy API Product Config Artifact (Deploys Just API Product Config)
+*Deploy API Product Config Artifact (Deploys Just API Product Config)*
 
 grunt --env=dev --artifact=./target/apiproduct-config/apiproduct-config-artifact.zip --username={username} --password={password} deployApiProductConfig --debug --curl
 
-Deploy Company Config Artifact (Deploys Just Company and Company App Config)
+*Deploy Company Config Artifact (Deploys Just Company and Company App Config)*
 
 grunt --env=dev --artifact=./target/apiproduct-config/apiproduct-config-artifact.zip --username={username} --password={password} deployCompanyConfig --debug --curl
 
-Deploy Developer App Artifact (Deploys Just Developer and Developer App Config)
+*Deploy Developer App Artifact (Deploys Just Developer and Developer App Config)*
 
 grunt --env=dev --artifact=./target/app-config/app-config-artifact.zip --username={username} --password={password} deployAppConfig --debug --curl
  
